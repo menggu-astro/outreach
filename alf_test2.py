@@ -1,3 +1,4 @@
+from __future__ import print_function
 #import fsps
 #import matplotlib
 #import matplotlib.pyplot as plt
@@ -108,8 +109,8 @@ curdoc().add_root(layout)
 #output_file("alf_test2.html")
 #save(layout)
 
-#from bokeh.embed import components
-#script, div = components(layout)
+from bokeh.embed import components
+script, div = components(layout)
 #print(script)
-#print >> 'alf_test2_script.txt', script
-#print >> 'alf_test2_div.txt', div
+with open('alf_test2_script.txt', 'w') as f:
+    print(script, file=f)
