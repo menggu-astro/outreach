@@ -58,9 +58,3 @@ layout = column(
         s0, row(s1, s2, s3), row(s4, s5))
 
 curdoc().add_root(layout)
-    
-script, div = components(layout)
-with open('script_etgspec.txt', 'w') as f:
-        print(script, file=f)
-with open('div_etgspec.txt', 'w') as f:
-        print(div, file=f)
