@@ -63,6 +63,7 @@ def alf_interact(doc):
 
     doc.add_root(layout)
     
+    
     #myplot_html = file_html(layout, CDN)
     # this HTML code is very long (~30 K), the cell below doesn't show all the code in NBviewer
     #print(myplot_html)
@@ -113,6 +114,10 @@ def alf_interact(doc):
                  text=textlist[i], render_mode='css', text_font_size='7pt')
         s5.add_layout(citation)
         s5.line([xloc, xloc], [1.06, 1.08])
+        
+    from bokeh.io import export_svgs
+    s0.output_backend = "svg"
+    export_svgs(layout, filename="plot.svg")
     
 
 server = Server({'/': alf_interact}, num_procs=1)
